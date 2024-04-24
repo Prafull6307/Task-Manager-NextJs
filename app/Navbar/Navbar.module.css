@@ -1,0 +1,39 @@
+/* styles.css or your preferred CSS file */
+/* .navItem {
+     list-style-type: none;
+   } */
+   
+   .navItem  {
+     padding: 0.5rem 1rem;
+     color: white;
+     text-decoration: none;
+     transition: background-color 0.3s ease;
+   }
+   
+   .navItem:hover {
+    
+     border-radius: 0.25rem;
+   }
+   .navLink:hover {
+     font-weight: bold;
+     background-color: #d32f2f;
+     color:white; /* Dark text color on hover */
+     transition: color 0.3s ease;
+     border-radius:0.25rem ;
+   }
+   
+   .logoutbutton {
+     
+     padding: 0.5rem 1rem;
+     color: #fff;
+     
+     border: none;
+     border-radius: 0.25rem;
+     cursor: pointer;
+     transition: background-color 0.3s ease;
+   }
+   
+   .logoutbutton:hover {
+     background-color: #d32f2f;
+   }
+   
