@@ -22,16 +22,18 @@ export async function POST(request:NextRequest)
           email:email,
      });
      
-   if(user==null){
-    throw new Error("user not found !!");
+   if(user==null&& !user){
+    return NextResponse.json({message:"wrong email"})
+ }
+ else{
+  const matched=bcrypt.compareSync(password,user.password);
+
+  if(!matched){
+      return NextResponse.json({message:"Password not found"})
+ 
+  }
  }
 
- const matched=bcrypt.compareSync(password,user.password);
-
- if(!matched){
-     throw new Error("Password not found!!");
-
- }
  
 
  const token= jwt.sign({

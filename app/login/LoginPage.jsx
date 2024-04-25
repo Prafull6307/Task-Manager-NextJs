@@ -31,7 +31,17 @@ function LoginPage() {
     }
     try {
       const result = await userLogin(logindata);
-
+      
+       if(result.message=='wrong email'){
+        toast.error("User not found")
+        return;
+       }
+      
+       if(result.message=='Password not found'){
+        toast.error("Incorrect Password")
+        return;
+       }
+        
       toast.success("User Login Successfully", {
         position: "top-center",
       });

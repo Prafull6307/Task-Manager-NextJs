@@ -7,7 +7,7 @@ interface TaskData {
   }
   
   export async function addTask(data: TaskData) {
-    const response = await axios.post("https://task-manager-next-js-self.vercel.app//api/tasks", data).then((response) => response.data);
+    const response = await axios.post('https://task-manager-next-js-self.vercel.app/api/tasks', data).then((response) => response.data);
   
     return response;
   }
