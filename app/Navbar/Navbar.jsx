@@ -14,6 +14,7 @@ function Navbar() {
   const router=useRouter()
   
   const [showNav, setShowNav] = useState(false);
+  
  
    async function logOut() {
    
