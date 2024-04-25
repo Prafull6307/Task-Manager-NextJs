@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 export async function userLogin(logindata:any){
      
      try {
-           const response = await axios.post("http://localhost:3000/api/login",logindata).then((response)=> response.data);
+           const response = await axios.post("https://task-manager-next-js-self.vercel.app/api/login",logindata).then((response)=> response.data);
             return response;
           
       
@@ -20,7 +20,7 @@ export async function userLogin(logindata:any){
 export async function dologOut(){
      
   try {
-        const response = await axios.post("http://localhost:3000/api/logout").then((response)=> response.data);
+        const response = await axios.post("https://task-manager-next-js-self.vercel.app/api/logout").then((response)=> response.data);
          return await response;
        
    
