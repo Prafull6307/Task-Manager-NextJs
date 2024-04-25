@@ -2,6 +2,7 @@ import dbconnection from "@/app/database/db";
 import { Task } from "@/app/modules/task";
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
+import { JwtPayload } from "jsonwebtoken";
 import { toast } from "react-toastify";
 
 dbconnection();
@@ -17,7 +18,7 @@ export async function POST(request: NextRequest) {
   const authToken = request.cookies.get("authtoken")?.value;
 
   try {
-    const data = jwt.verify(`${authToken}`, 'asdgfdfgfdgrdfg');
+    const data = jwt.verify(`${authToken}`, 'asdgfdfgfdgrdfg') as JwtPayload;
 
     const task = new Task({
       title,
