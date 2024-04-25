@@ -1,22 +1,12 @@
 import { Task } from "@/app/modules/task";
 import { NextRequest, NextResponse } from "next/server";
-import { JwtPayload } from "jsonwebtoken";
 
-
-export async function DELETE(request: NextRequest, { params }: { params: { taskId: string } }) {
+export async function DELETE(request: NextRequest, { params }: { params: { taskId: any } }) {
   try {
-   
-    
-    // Parse request body to JSON
-    const body = await request.json();
-    
-    // Assuming data is obtained from somewhere else, such as a JWT token
-    const data = body.data as JwtPayload;
-
+    const { taskId } = params;
     await Task.deleteOne({
-      _id: data._id, // Type assertion here
+      _id: taskId,
     });
-
     return NextResponse.json({
       message: "Task Deleted",
       success: true
