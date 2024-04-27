@@ -8,7 +8,7 @@ function Page() {
       <div className="bg-blue-500 text-white py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center mb-8">
-            Features of Task Manager
+            Features of Work Manager
           </h2>
           <div className="flex flex-wrap justify-center -mx-4">
             <FeatureCard
